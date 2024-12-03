@@ -62,15 +62,16 @@ def checkLine(line, first):
     return True
 
 if __name__ == '__main__':
-    fname = "test2.txt"
+    fname = "input.txt"
     file = open(fname)
     
     safeCount = 0
     for line in file:
         line = line.strip().split()
-        for i in range(len(line)):
-            line[i] = int(line[i])
+        
         if(checkLine(line, True)):
             safeCount+=1
+        else:
+            print(line, checkLine(line, True))
 
     print(safeCount)
